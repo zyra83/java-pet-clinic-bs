@@ -1,1 +1,1 @@
-Pet clinic
+Pet Clinic
