@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>petClinic_BENOIT</artifactId>
-    <groupId>fr.zyra</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+        <artifactId>petClinic_BENOIT</artifactId>
+        <groupId>fr.zyra</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <groupId>fr.zyra</groupId>
     <artifactId>petClinic_BENOIT-ejb</artifactId>
@@ -25,6 +25,43 @@
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>net.entetrs.commons</groupId>
+            <artifactId>generic-common-tools</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/META-INF/lib/generic-commons-tools.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.entetrs.commons</groupId>
+            <artifactId>jpa-common-tools</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/META-INF/lib/jpa-commons-tools.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>net.entetrs.commons</groupId>
+            <artifactId>jsf-common-tools</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/META-INF/lib/jsf-commons-tools.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+            <version>1.1.3</version>
         </dependency>
     </dependencies>
 
@@ -77,5 +114,11 @@
             </plugin>
         </plugins>
     </build>
-
+    <repositories>
+        <repository>
+            <id>unknown-jars-temp-repo</id>
+            <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
+            <url>file:${project.basedir}/lib</url>
+        </repository>
+    </repositories>
 </project>
