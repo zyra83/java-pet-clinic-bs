@@ -1,67 +1,59 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
-	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:p="http://primefaces.org/ui"
-	xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head>
-	<meta charset="UTF-8" />
-	<title>PetClinic : <ui:insert name="title-zone" /></title>
+    <h:head>
+        <meta charset="UTF-8" />
+        <title>PetClinic : <ui:insert name="title-zone" /></title>
 
-    <h:outputStylesheet library="css" name="reset.css" />
-    <h:outputStylesheet library="css" name="grid.css" />
-	<h:outputStylesheet library="css" name="style.css" />
+        <h:outputStylesheet library="css" name="main.css" />
+    </h:head>
 
-	<h:outputScript library="js" name="slider.js" />
-	<h:outputScript library="js" name="superfish.js" />
-	<h:outputScript library="js" name="tms-0.4.1.js" />
+    <h:body id="page1">
+        qsqsd
+        <p:growl autoUpdate="true" globalOnly="true" />
 
-	
+        <header>
+            <div class="inner">
+                <h1 class="logo">
+                    <!--  <a href="index.xhtml">Pet clinic</a> -->
+                    <!-- En JSF -->
+                    <h:link outcome="/index.xhtml">PetClinic</h:link> 
+                </h1>
+                <div class="fright">
+                    <div class="header-meta">
+                        <div class="col-elem">
+                            Have a problem with your pet? <br />
+                            Call us now : <span class="phone">1-800-123-1234</span>
+                        </div>
+                    </div>
+                    <nav>
+                        <ul class="sf-menu">
+                            <!-- 
+                                    <li><a href="index.xhtml">Home</a></li>
+                                    <li><a href="owners.xhtml">Owners</a></li>
+                                    <li><a href="pets.xhtml">Pets</a></li>
+                            -->
+                            <!-- En JSF -->
+                            <li><h:link outcome="/index.xhtml" value="Home" /></li>
+                            <li><h:link outcome="/owners.xhtml" value="Owners" /></li>
+                            <li><h:link outcome="/pets.xhtml" value="Pets" /></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="clear"></div>
+            </div>
 
-</h:head>
+        </header>
 
-<h:body id="page1">
-qsqsd
-    <p:growl autoUpdate="true" globalOnly="true" />
-
-	<header>
-		<div class="inner">
-			<h1 class="logo">
-				<!--  <a href="index.xhtml">Pet clinic</a> -->
-				<!-- En JSF -->
-				<h:link outcome="/index.xhtml">PetClinic</h:link> 
-			</h1>
-			<div class="fright">
-				<div class="header-meta">
-					<div class="col-elem">
-						Have a problem with your pet? <br />
-						Call us now : <span class="phone">1-800-123-1234</span>
-					</div>
-				</div>
-				<nav>
-					<ul class="sf-menu">
-					<!-- 
-						<li><a href="index.xhtml">Home</a></li>
-						<li><a href="owners.xhtml">Owners</a></li>
-						<li><a href="pets.xhtml">Pets</a></li>
-					 -->
-					 <!-- En JSF -->
-					<li><h:link outcome="/index.xhtml" value="Home" /></li>
-					<li><h:link outcome="/owners.xhtml" value="Owners" /></li>
-					<li><h:link outcome="/pets.xhtml" value="Pets" /></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="clear"></div>
-		</div>
-
-	</header>
-
-	<ui:insert name="main-zone">Main Zone</ui:insert>
         <ui:insert name="main-zone">Main Zone</ui:insert>
 
-</h:body>
+        <!-- Chargements des scripts à la fin pour les perfs -->
+        <h:outputScript library="js" name="slider.js" />
+    </h:body>
 
 
 </html>
