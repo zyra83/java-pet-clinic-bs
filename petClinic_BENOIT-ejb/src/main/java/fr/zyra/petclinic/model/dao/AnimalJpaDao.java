@@ -12,7 +12,7 @@ import fr.zyra.petclinic.model.entities.Animal;
  *
  * @author mickael
  */
-@Stateless
+//@Stateless
 // @LocalBean // POUR EJB LIGHT
 public class AnimalJpaDao extends AbstractDao<Animal> {
 
