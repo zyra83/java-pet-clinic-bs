@@ -5,30 +5,54 @@ import fr.zyra.petclinic.model.entities.Owner;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.annotation.PostConstruct;
 
 import javax.inject.Named;
 import javax.faces.view.ViewScoped;
-import lombok.extern.apachecommons.CommonsLog;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+import lombok.experimental.FieldDefaults;
 
-@Named("YOLOCTRL")
+@SuppressWarnings("serial")
+@Named
 @ViewScoped
-@CommonsLog
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@NoArgsConstructor
 // c'est un bean donc serializable
 public class OwnerPageController implements Serializable {
-
-//    @Inject
-//     @EJB 
-//    private FacadeMetier facadeMetier;
-    // c'est un bean donc constructeur VIIIIIDDDEEEE
-    public OwnerPageController() {
-
-    }
+    
+    
+    private List<String> lstStrings;
+    
+    private List<Owner> lstOwners;
 
     public List<Owner> getSelected() {
-        ArrayList<Owner> a = new ArrayList<>();
-        a.add(new Owner("rir"));
-        a.add(new Owner("fifi"));
-        return a;
+        
+        return lstOwners;
     }
+
+    public List<String> getLstStrings() {
+        return lstStrings;
+    }
+
+    public void setLstStrings(List<String> lstStrings) {
+        this.lstStrings = lstStrings;
+    }
+    
+    
+    @PostConstruct
+    public void init(){
+        this.lstStrings = new ArrayList();
+        this.lstStrings.add("Jojo");
+        this.lstStrings.add("Yolo");
+        
+       lstOwners = new ArrayList();
+       lstOwners.add(new Owner("rir"));
+       lstOwners.add(new Owner("fifi"));
+       
+        System.out.println(lstOwners.size());
+    }
+    
+    
 
 }

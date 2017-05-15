@@ -28,10 +28,7 @@ import lombok.experimental.FieldDefaults;
 // GROS JAVA
 @SuppressWarnings("serial")
 // LBK
-@ToString
 @FieldDefaults(level = AccessLevel.PRIVATE)
-// TODO : LBK - MEF ArrayLists !
-// @NoArgsConstructor
 // JPA
 @Entity
 @Table(name = "OWNER")
@@ -79,8 +76,10 @@ public class Owner extends AbstractEntity {
      *
      * @return
      */
+   
+    
     public Collection<Animal> getAnimals() {
-        return Collections.unmodifiableCollection(animals);
+        return new ArrayList<>(animals);
     }
 
     /**

@@ -11,21 +11,16 @@
     </ui:define>
 
     <ui:define name="main-zone">
-        <h:messages />
-
-            <h:inputText value="#{ownerController.selected}"/>
-            
-        <div class="slider-container">
-            <div class="mp-slider">
-                <ul class="items">
-                    <li><h:graphicImage library="images" name="slide-1.jpg" /></li>
-                    <li><h:graphicImage library="images" name="slide-2.jpg" /></li>
-                    <li><h:graphicImage library="images" name="slide-3.jpg" /></li>
-                </ul>
-            </div>
-        </div>
-
+        Du HTML basique pour piger pourquoi pas d'interprétation du JSF.
+        <h:outputText value="#{ownerPageController.selected}" />
+        <h:outputText value="#{ownerPageController.lstStrings}" />
+        <ul>
+            <ui:repeat value="#{ownerPageController.selected}" var="c">
+                <li>
+                    #{c.name}
+                </li>
+            </ui:repeat>
+        </ul>
     </ui:define>
-
 
 </ui:composition>
