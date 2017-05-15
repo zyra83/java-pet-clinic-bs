@@ -1,11 +1,19 @@
 package fr.zyra.petclinic.model.facade;
 
+import fr.zyra.petclinic.model.dao.DaoFactory;
+import fr.zyra.petclinic.model.dao.OwnerJpaDao;
 import fr.zyra.petclinic.model.entities.Owner;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import lombok.extern.apachecommons.CommonsLog;
 
 /**
  * La façade métier, suivant les cas va renvoyer directement les DaoException.
@@ -16,7 +24,12 @@ import javax.enterprise.context.ApplicationScoped;
  *
  */
 @Stateless
+@LocalBean
+@CommonsLog
 public class FacadeMetier implements Serializable {
+
+    @PersistenceContext
+    private EntityManager em;
 
     public FacadeMetier() {
         // TODO Auto-generated constructor stub
@@ -31,17 +44,20 @@ public class FacadeMetier implements Serializable {
     }
 
     public List<Owner> listOwners() throws Exception {
+        System.out.println(em.toString());
 //        try {
-//            return DaoFactory.fabriquerDaoOwner().readAll();
-//        } catch (Exception e) {
-//            log.info("Foirade" + e.getMessage(), e);
+//            TypedQuery<Owner> m = em.createQuery("SELECT o FROM Owner o", Owner.class);
+//             return m.getResultList();
+//        } catch (RuntimeException e) {
+//            throw new RuntimeException("Impossible de lire les owners" + e.getMessage(), e);
 //        }
-//        return new ArrayList<>();
-        System.out.println("JPP DU JAVA DE MERDE");
-        ArrayList<Owner> a =  new ArrayList<>();
-        a.add(new Owner("FM riri"));
-        a.add(new Owner("FM fifi"));
-        return a;
+
+        try {
+            return DaoFactory.fabriquerDaoOwner().readAll();
+        } catch (RuntimeException e) {
+            log.info("Foirade" + e.getMessage());
+        }
+        return null;
 
     }
 

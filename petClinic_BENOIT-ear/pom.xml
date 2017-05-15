@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-    <artifactId>petClinic_BENOIT</artifactId>
-    <groupId>fr.zyra</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+        <artifactId>petClinic_BENOIT</artifactId>
+        <groupId>fr.zyra</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <groupId>fr.zyra</groupId>
     <artifactId>petClinic_BENOIT-ear</artifactId>
@@ -38,6 +38,34 @@
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                 </configuration>
             </plugin>
+            
+            <plugin>
+                <groupId>org.glassfish.maven.plugin</groupId>
+                <artifactId>maven-glassfish-plugin</artifactId>
+                <configuration>
+                    <force>true</force>
+                    <terse>false</terse>
+                    <echo>true</echo>
+                    <debug>true</debug>
+                    <glassfishDirectory>/opt/payara41/glassfish</glassfishDirectory>
+                    <user>admin</user>
+                    <adminPassword>admin</adminPassword>
+                    <domain>
+                        <name>domain1</name>
+                        <host>localhost</host>
+                        <adminPort>4848</adminPort>
+                    </domain>
+                    <components>
+                        <component>
+                            <name>${project.artifactId}</name>
+                            <artifact>${project.build.directory}/${project.build.finalName}.ear</artifact>
+                        </component>
+                    </components>
+                </configuration>
+            </plugin>
+            
+            
+            
         </plugins>
     </build>
     <dependencies>

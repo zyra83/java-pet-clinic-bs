@@ -16,7 +16,7 @@ import net.entetrs.commons.jpa.AbstractDaoEntrepriseEdition;
  */
 public abstract class AbstractDao<T> extends AbstractDaoEntrepriseEdition<T> {
 
-    @PersistenceContext
+    @PersistenceContext(unitName="petClinic")
     private EntityManager em;
 
     @Override
