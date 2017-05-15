@@ -110,4 +110,11 @@ public class Owner extends AbstractEntity {
         }
     }
 
+    public Owner() {
+    }
+
+    public Owner(String name) {
+        this.name = name;
+    }
+
 }

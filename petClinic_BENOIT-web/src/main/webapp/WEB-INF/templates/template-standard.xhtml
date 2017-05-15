@@ -13,7 +13,11 @@
     </h:head>
 
     <h:body id="page1">
-        qsqsd
+        
+        <ui:repeat var="c" value="#{YOLOCTRL.selected}">
+            <li><h:outputText value="#{c}"/></li>
+        </ui:repeat>
+        
         <p:growl autoUpdate="true" globalOnly="true" />
 
         <header>
