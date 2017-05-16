@@ -25,7 +25,6 @@ import lombok.extern.apachecommons.CommonsLog;
  *
  */
 @Stateless
-@Dependent
 public class FacadeMetier implements Serializable {
 
     public FacadeMetier() {
