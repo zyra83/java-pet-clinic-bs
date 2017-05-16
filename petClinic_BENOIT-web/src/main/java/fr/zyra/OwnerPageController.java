@@ -28,7 +28,7 @@ public class OwnerPageController implements Serializable {
     @Inject
     Owner ownerGenere;
     
-    @EJB
+    @Inject
     FacadeMetier fm;
 
 //    @EJB
