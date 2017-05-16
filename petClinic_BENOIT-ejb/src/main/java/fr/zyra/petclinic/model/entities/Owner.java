@@ -8,6 +8,8 @@ package fr.zyra.petclinic.model.entities;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import javax.enterprise.context.Dependent;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -26,6 +28,7 @@ import lombok.experimental.FieldDefaults;
  * @author mickael
  */
 // GROS JAVA
+@Dependent // pour suivre @Inject du @Named et se mettre au même scope que l'apellant
 @SuppressWarnings("serial")
 // LBK
 @FieldDefaults(level = AccessLevel.PRIVATE)

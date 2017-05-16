@@ -9,23 +9,27 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.enterprise.context.RequestScoped;
 
 import javax.inject.Named;
-import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @SuppressWarnings("serial")
 @Named
-@ViewScoped
+@RequestScoped
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @NoArgsConstructor
 // c'est un bean donc serializable
 public class OwnerPageController implements Serializable {
 
-    @EJB
-    FacadeMetier fm;
+//    @Inject
+    Owner ownerGenere;
+    
+//    @EJB
+//    FacadeMetier fm;
 
     @EJB
     OwnerJpaDao odao;
@@ -35,6 +39,13 @@ public class OwnerPageController implements Serializable {
     public List<Owner> getSelected() {
         return lstOwners;
     }
+
+    public Owner getOwnerGenere() {
+        return ownerGenere;
+    }
+    
+    
+    
 
     @PostConstruct
     public void init() {
