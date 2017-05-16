@@ -28,19 +28,16 @@ import lombok.extern.apachecommons.CommonsLog;
 @Dependent
 public class FacadeMetier implements Serializable {
 
-
-//    @Inject
-//    private OwnerJpaDao odao;
-
     public FacadeMetier() {
         // ça reste un singleton
     }
     
-    
     public Owner obtenirPersonnageDuJour(){
-        
-        
-        return new Owner("John Snow");
+        if(Math.random() > 0.5){
+            return new Owner("John Snow");
+        } else {
+            return new Owner("Aria Stark");
+        }
     }
 
 }

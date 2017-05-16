@@ -25,28 +25,22 @@ import lombok.experimental.FieldDefaults;
 // c'est un bean donc serializable
 public class OwnerPageController implements Serializable {
 
+    /**
+     * Un owner génré en RAB 
+     * Owner @Dependant
+     */
     @Inject
     Owner ownerGenere;
     
+    /**
+     * On injecte la facadeMetier qui est un BeanSession
+     * Stateless et 
+     */
     @Inject
     FacadeMetier fm;
-
-//    @EJB
-//    OwnerJpaDao odao;
     
     private List<Owner> lstOwners;
-
-    public List<Owner> getSelected() {
-        return lstOwners;
-    }
-
-    public Owner getOwnerGenere() {
-        return ownerGenere;
-    }
     
-    
-    
-
     @PostConstruct
     public void init() {
         lstOwners = new ArrayList();
@@ -55,6 +49,14 @@ public class OwnerPageController implements Serializable {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
+    }
+    
+    public List<Owner> getSelected() {
+        return lstOwners;
+    }
+
+    public Owner getOwnerGenere() {
+        return ownerGenere;
     }
 
 }
