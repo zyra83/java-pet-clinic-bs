@@ -25,14 +25,14 @@ import lombok.experimental.FieldDefaults;
 // c'est un bean donc serializable
 public class OwnerPageController implements Serializable {
 
-//    @Inject
+    @Inject
     Owner ownerGenere;
     
-//    @EJB
-//    FacadeMetier fm;
-
     @EJB
-    OwnerJpaDao odao;
+    FacadeMetier fm;
+
+//    @EJB
+//    OwnerJpaDao odao;
     
     private List<Owner> lstOwners;
 
@@ -50,9 +50,8 @@ public class OwnerPageController implements Serializable {
     @PostConstruct
     public void init() {
         lstOwners = new ArrayList();
-
         try {
-            lstOwners.addAll(odao.readAll());
+            lstOwners.add(fm.obtenirPersonnageDuJour());
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }

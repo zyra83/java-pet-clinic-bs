@@ -18,7 +18,6 @@ import lombok.extern.apachecommons.CommonsLog;
  */
 // @LocalBean // POUR EJB LIGHT
 @Dependent
-@Stateless
 public class OwnerJpaDao extends AbstractDao<Owner> {
     
     

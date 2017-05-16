@@ -25,14 +25,22 @@ import lombok.extern.apachecommons.CommonsLog;
  *
  */
 @Stateless
-//@LocalBean
-@CommonsLog
-//@Dependent
+@Dependent
 public class FacadeMetier implements Serializable {
 
 
+//    @Inject
+//    private OwnerJpaDao odao;
+
     public FacadeMetier() {
-        // TODO Auto-generated constructor stub
+        // ça reste un singleton
+    }
+    
+    
+    public Owner obtenirPersonnageDuJour(){
+        
+        
+        return new Owner("John Snow");
     }
 
 }
