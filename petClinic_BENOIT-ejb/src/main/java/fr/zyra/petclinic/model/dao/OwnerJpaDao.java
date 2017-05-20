@@ -20,8 +20,6 @@ import lombok.extern.apachecommons.CommonsLog;
 @Dependent
 public class OwnerJpaDao extends AbstractDao<Owner> {
     
-    
-    
     @Override
     public List<Owner> readAll() {
         List<Owner> liste = super.readAll();
@@ -36,8 +34,5 @@ public class OwnerJpaDao extends AbstractDao<Owner> {
 
        return liste;
     }
-    
-    
-    
 
 }

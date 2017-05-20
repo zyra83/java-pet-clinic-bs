@@ -1,20 +1,10 @@
 package fr.zyra.petclinic.model.facade;
 
-import fr.zyra.petclinic.model.dao.DaoFactory;
 import fr.zyra.petclinic.model.dao.OwnerJpaDao;
 import fr.zyra.petclinic.model.entities.Owner;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.Dependent;
 import javax.inject.Inject;
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-import lombok.extern.apachecommons.CommonsLog;
 
 /**
  * La façade métier, suivant les cas va renvoyer directement les DaoException.
@@ -26,6 +16,9 @@ import lombok.extern.apachecommons.CommonsLog;
  */
 @Stateless
 public class FacadeMetier implements Serializable {
+    
+    @Inject
+    OwnerJpaDao ojdao;
 
     public FacadeMetier() {
         // ça reste un singleton
