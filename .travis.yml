@@ -7,7 +7,7 @@ jdk:
   
 install:
   - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/src/main/resources/META-INF/lib/generic-commons-tools.jar -DgroupId=net.entetrs.commons -DartifactId=generic-common-tools -Dversion=1.0 -Dpackaging=jar
-  - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/src/main/resources/META-INF/lib/jsf-commons-tools.jar -ZDgroupId=net.entetrs.commons -DartifactId=jsf-common-tools -Dversion=1.0 -Dpackaging=jar
+  - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/src/main/resources/META-INF/lib/jsf-commons-tools.jar -DgroupId=net.entetrs.commons -DartifactId=jsf-common-tools -Dversion=1.0 -Dpackaging=jar
   - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/src/main/resources/META-INF/lib/jpa-commons-tools.jar -DgroupId=net.entetrs.commons -DartifactId=jpa-common-tools -Dversion=1.0 -Dpackaging=jar
 
 script:
