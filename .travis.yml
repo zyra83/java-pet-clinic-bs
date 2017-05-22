@@ -4,6 +4,11 @@ install: true
 
 jdk:
   - oraclejdk8
+  
+install:
+  - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/lib/generic-commons-tools.jar DgroupId=net.entetrs.commons -DartifactId=generic-common-tools -Dversion=1.0 -Dpackaging=jar
+  - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/lib/jsf-commons-tools.jar DgroupId=net.entetrs.commons -DartifactId=jsf-common-tools -Dversion=1.0 -Dpackaging=jar
+  - mvn install:install-file -Dfile=petClinic_BENOIT-ejb/lib/jpa-commons-tools.jar DgroupId=net.entetrs.commons -DartifactId=jpa-common-tools -Dversion=1.0 -Dpackaging=jar
 
 script:
   # JaCoCo is used to have code coverage, the agent has to be activated
