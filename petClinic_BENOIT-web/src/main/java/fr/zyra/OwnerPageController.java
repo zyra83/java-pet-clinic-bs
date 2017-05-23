@@ -58,5 +58,9 @@ public class OwnerPageController implements Serializable {
     public Owner getOwnerGenere() {
         return ownerGenere;
     }
+    
+    public void genererBdd(){
+        fm.genererBdd();
+    }
 
 }

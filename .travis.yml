@@ -23,4 +23,5 @@ before_cache:
   # remove all the artifacts (JAR, ZIP) that are installed in local repo because of mvn deploy
   - rm -rf $HOME/.m2/repository/fr/zyra
   - find $HOME/.m2 -name resolver-status.properties -exec rm {} \;
-
+# deploy ce machin 
+# /home/travis/build/zyra83/pet-clinic/petClinic_BENOIT-ear/target/petClinic_BENOIT-ear-1.0-SNAPSHOT.ear

@@ -20,6 +20,10 @@
                 </li>
             </ui:repeat>
         </ul>
+        
+        <h:form>
+            <h:commandButton actionListener="#{ownerPageController.genererBdd()}" value="Générer BDD" />
+        </h:form>
     </ui:define>
-
+    
 </ui:composition>
