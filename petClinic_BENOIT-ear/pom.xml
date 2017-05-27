@@ -38,7 +38,7 @@
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                 </configuration>
             </plugin>
-            
+
             <plugin>
                 <groupId>org.glassfish.maven.plugin</groupId>
                 <artifactId>maven-glassfish-plugin</artifactId>
@@ -63,9 +63,7 @@
                     </components>
                 </configuration>
             </plugin>
-            
-            
-            
+
         </plugins>
     </build>
     <dependencies>
